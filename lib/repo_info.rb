@@ -1,10 +1,10 @@
 require 'http'
 require 'yaml'
 
-config = YAML::safe_load(File.read('config/secret.yml'))
+config = YAML.safe_load(File.read('config/secret.yml'))
 
-def ig_api_path(path, location-id, ACCESS-TOKEN)
-	'https://api.instagram.com/v1/locations/#{location-id}/media/recent?access_token=#{ACCESS-TOKEN}' + path
+def ig_api_path( location-id, ACCESS-TOKEN)
+	'https://api.instagram.com/v1/locations/#{location-id}/media/recent?access_token=' + 'ACCESS-TOKEN' 
 end
 
 def call_ig_url(config, url)
